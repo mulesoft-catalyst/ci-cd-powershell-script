@@ -11,6 +11,8 @@ This repository has the scripts that are required to deploy APIs to Cloud Hub. S
 # Script description
 High level script deployment flow is mentioned below
 
+![Image of Deployment](deployment-pipeline-flow.png)
+
 1. Retrieve the accesstoken for the REST API authentication based on the user credentials passed as input.
 2. Retrieve the organizationID based on the business group name passed on as input.
 3. Retrieve the environment ID based on the environment name passed on as input
