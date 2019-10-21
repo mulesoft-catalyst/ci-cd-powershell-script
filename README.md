@@ -16,22 +16,22 @@ High level script deployment flow is mentioned below
 3. Retrieve the environment ID based on the environment name passed on as input
 4. Search Anypoint exchange based on the groupId,assetId and assetVersion specified in the input json file.
 5. Search API manager to check if API Instance is already create for combination of groupId, assetId, assetVersion and instanceLabel (if provided).
-    a. If API Manager instance is not available create the new one based on the exchange asset.
-    b. If API manager instance is available and request to update the changespecification then update the API instance.
-    c. Reuse the same API manager instance if instance is available and no change is required. 
+    - If API Manager instance is not available create the new one based on the exchange asset.
+    - If API manager instance is available and request to update the changespecification then update the API instance.
+    - Reuse the same API manager instance if instance is available and no change is required. 
 6. Retrieve all the policies already applied to API manager instance.
-    a. if no policies applied, apply new policy specified in the input file for that API Manager instance.
-    b. if the same policy exist but values are different update the policy information based on the policyid retrieved c. No Changes to the API policy.
+    - if no policies applied, apply new policy specified in the input file for that API Manager instance.
+    - if the same policy exist but values are different update the policy information based on the policyid retrieved c. No Changes to the API policy.
 7. Retrieve all SLA Tier information already applied to API manager instance
-    a. if no SLA Tier information applied, apply the SLA tier specified in the input file for that API Manager instance. 
-    b. if the same SLA Tier exist but values are different update the SLA Tier information based on the tierId.
-    c. No changes to the API SLA Tier
+    - if no SLA Tier information applied, apply the SLA tier specified in the input file for that API Manager instance. 
+    - if the same SLA Tier exist but values are different update the SLA Tier information based on the tierId.
+    - No changes to the API SLA Tier
 8. Get Package binary from the Artifactory
-    a. Check if the application already exist based on the application name passed as input.
-    b. if the application does not exist then check if the domain is available for deployment.
-    c. if domain is available, then deploy the new application based on the input parameters like region, num of workers, workertype,
+    - Check if the application already exist based on the application name passed as input.
+    - if the application does not exist then check if the domain is available for deployment.
+    - if domain is available, then deploy the new application based on the input parameters like region, num of workers, workertype,
 applicationname ,mule.env, mule.key and other input parameters.
-    d. If application already exist then update the application based on the input parameters like region, num of workers, workertype,
+    - If application already exist then update the application based on the input parameters like region, num of workers, workertype,
 applicationname ,mule.env, mule.key and other input parameters
 
 ## Script parameters
@@ -47,8 +47,7 @@ applicationname ,mule.env, mule.key and other input parameters
 | MuleVersion  | Mule Runtime version  | Y |
 | Region  | Mule Cloudhub region to deploy the application | Y|
 | NumWorkers  | Number of mule application worker instance you want to deploy | Y |
-| WorkerType  | Worker resource size for cloud hub deployment
-MICRO (0.1 vCores) SMALL (0.2 vCores) MEDIUM (1 vCore ) LARGE (2 vCores) XLARGE (4 vCores) XXLARGE (8 vCores) 4XLARGE (16 vCores) | Y|
+| WorkerType  | Worker resource size for cloud hub deployment MICRO (0.1 vCores) SMALL (0.2 vCores) MEDIUM (1 vCore ) LARGE (2 vCores) XLARGE (4 vCores) XXLARGE (8 vCores) 4XLARGE (16 vCores) | Y|
 | APIJarFileLocation  | Application jar file created as part of build  | Y |
 | PlatformClientID  | Anypoint platform client id to runtime manager to connect to API management | Y|
 | PlatformClientSecret  | Anypoint platform client secret to runtime manager to connect to API management  | Y |
@@ -113,5 +112,5 @@ MICRO (0.1 vCores) SMALL (0.2 vCores) MEDIUM (1 vCore ) LARGE (2 vCores) XLARGE 
 }
 
 ```
-# Contributer
+# Contributors
 Srinivasan Raghunathan
